@@ -1,0 +1,9 @@
+# Local development - không cần HTTPS
+# Chạy: caddy run --config Caddyfile.local
+
+:8080 {
+	root * .
+	encode gzip
+	file_server browse
+	try_files {path} {path}.html
+}

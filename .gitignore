@@ -1,0 +1,26 @@
+# OS
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+
+# Logs
+*.log
+access.log
+
+# Caddy (production-only, không cần khi deploy Pages)
+caddy.exe
+caddy_*
+
+# File cài app (host trên Google Drive, không push lên GitHub)
+downloads/*.exe
+downloads/*.dmg
+downloads/*.zip
+downloads/*.pkg
+downloads/*.msi
+
+# Cloudflared
+.cloudflared/

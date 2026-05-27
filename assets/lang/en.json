@@ -1,0 +1,83 @@
+{
+  "meta": { "description": "AI Factory - Automated AI image and video creation studio for Windows and macOS" },
+  "nav": {
+    "features": "Features",
+    "showcase": "Showcase",
+    "how": "How it works",
+    "requirements": "Requirements",
+    "faq": "FAQ"
+  },
+  "cta": { "download": "Free Download" },
+  "hero": {
+    "badge": "⚡ Now available for Windows & macOS",
+    "title": "AI Studio for <span class=\"gradient-text\">images & videos</span>",
+    "sub": "AI Factory turns your ideas into high-quality images and videos in seconds. No design skills required. Runs right on your machine.",
+    "ctaPrimary": "Download Free",
+    "ctaSecondary": "Watch demo",
+    "meta1": "Free to try",
+    "meta2": "No signup required",
+    "meta3": "Export quality"
+  },
+  "features": {
+    "title": "Powerful features",
+    "sub": "Everything you need to create professional AI content",
+    "f1": { "title": "AI Image Generation", "desc": "Turn text into high-quality images with hundreds of artistic styles." },
+    "f2": { "title": "AI Video Generation", "desc": "Transform still images or scripts into smooth motion videos." },
+    "f3": { "title": "Batch Automation", "desc": "Generate hundreds of pieces of content at once using templates." },
+    "f4": { "title": "Total Privacy", "desc": "Everything runs locally on your machine. No data sent to servers." },
+    "f5": { "title": "No Watermarks", "desc": "Clean exports for commercial use, no restrictions." },
+    "f6": { "title": "Constant Updates", "desc": "New AI models and features every week, completely free." }
+  },
+  "showcase": { "title": "Made with AI Factory", "sub": "Real creations from our users" },
+  "how": {
+    "title": "Get started in 3 steps",
+    "sub": "So simple anyone can do it",
+    "s1": { "title": "Download & Install", "desc": "Get the installer for Windows or macOS. Run it and follow the wizard." },
+    "s2": { "title": "Enter your idea", "desc": "Pick a template or describe what you want to create." },
+    "s3": { "title": "Export & use", "desc": "Get high-quality images or videos saved straight to your machine." }
+  },
+  "download": {
+    "title": "Download AI Factory now",
+    "sub": "Free. No signup. No ads.",
+    "win": { "label": "Download for" },
+    "mac": { "label": "Download for" },
+    "note": "Latest version • Updated May 2026"
+  },
+  "req": {
+    "title": "System requirements",
+    "sub": "Runs on most modern machines",
+    "win": {
+      "os": "Windows 10/11 (64-bit)",
+      "ram": "Minimum 8 GB RAM (16 GB recommended)",
+      "gpu": "NVIDIA / AMD GPU (4GB+ VRAM recommended)",
+      "disk": "10 GB free disk space"
+    },
+    "mac": {
+      "os": "macOS 12 Monterey or later",
+      "chip": "Apple Silicon (M1/M2/M3) or Intel",
+      "ram": "Minimum 8 GB RAM",
+      "disk": "10 GB free disk space"
+    }
+  },
+  "faq": {
+    "title": "Frequently asked questions",
+    "q1": "Is AI Factory really free?",
+    "a1": "Yes. The current version is completely free with no limit on the number of images or videos generated.",
+    "q2": "Do I need an internet connection?",
+    "a2": "Only for the first model download. After that, you can use it fully offline.",
+    "q3": "Can I use the generated content commercially?",
+    "a3": "Yes. You own all content you create and can use it for any commercial purpose.",
+    "q4": "Will it run on a low-end machine?",
+    "a4": "It can run, but will be slower. A dedicated GPU is recommended for the best experience.",
+    "q5": "Is my data safe?",
+    "a5": "Absolutely. All processing happens on your machine — no data is sent to any server."
+  },
+  "footer": {
+    "tagline": "Automated AI image & video studio.",
+    "product": "Product",
+    "legal": "Legal",
+    "contact": "Contact",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Use"
+  }
+}

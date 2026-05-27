@@ -1,0 +1,32 @@
+# Production Caddyfile - dùng khi đã trỏ domain
+# Chạy: caddy run --config Caddyfile
+
+vuongbmt.space, www.vuongbmt.space {
+	root * C:/Users/Admin/Desktop/webTool
+	encode gzip zstd
+	file_server
+
+	# Cache static assets
+	@static {
+		path *.css *.js *.svg *.png *.jpg *.jpeg *.webp *.woff2 *.mp4
+	}
+	header @static Cache-Control "public, max-age=31536000, immutable"
+
+	# Security headers
+	header {
+		X-Content-Type-Options nosniff
+		X-Frame-Options SAMEORIGIN
+		Referrer-Policy strict-origin-when-cross-origin
+		Permissions-Policy "geolocation=(), microphone=(), camera=()"
+	}
+
+	# Pretty URLs (privacy.html, terms.html)
+	try_files {path} {path}.html {path}/index.html
+
+	log {
+		output file C:/Users/Admin/Desktop/webTool/access.log {
+			roll_size 10MB
+			roll_keep 5
+		}
+	}
+}
