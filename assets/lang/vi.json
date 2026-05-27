@@ -24,9 +24,7 @@
     "f1": { "title": "Tạo ảnh AI", "desc": "Chuyển văn bản thành ảnh chất lượng cao với hàng trăm phong cách nghệ thuật." },
     "f2": { "title": "Tạo video AI", "desc": "Biến ảnh tĩnh hoặc kịch bản thành video chuyển động mượt mà." },
     "f3": { "title": "Tự động hàng loạt", "desc": "Tạo hàng trăm nội dung cùng lúc theo template có sẵn." },
-    "f4": { "title": "Riêng tư tuyệt đối", "desc": "Xử lý ngay trên máy bạn. Dữ liệu không gửi lên server." },
-    "f5": { "title": "Không watermark", "desc": "Xuất ảnh, video sạch sẽ, dùng thương mại tự do." },
-    "f6": { "title": "Cập nhật liên tục", "desc": "Thêm model AI và tính năng mới mỗi tuần, hoàn toàn miễn phí." }
+    "f4": { "title": "Cập nhật liên tục", "desc": "Thêm model AI và tính năng mới mỗi tuần, hoàn toàn miễn phí." }
   },
   "showcase": { "title": "Tác phẩm từ AI Factory", "sub": "Những gì người dùng đã tạo ra" },
   "how": {

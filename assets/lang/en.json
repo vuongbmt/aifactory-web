@@ -24,9 +24,7 @@
     "f1": { "title": "AI Image Generation", "desc": "Turn text into high-quality images with hundreds of artistic styles." },
     "f2": { "title": "AI Video Generation", "desc": "Transform still images or scripts into smooth motion videos." },
     "f3": { "title": "Batch Automation", "desc": "Generate hundreds of pieces of content at once using templates." },
-    "f4": { "title": "Total Privacy", "desc": "Everything runs locally on your machine. No data sent to servers." },
-    "f5": { "title": "No Watermarks", "desc": "Clean exports for commercial use, no restrictions." },
-    "f6": { "title": "Constant Updates", "desc": "New AI models and features every week, completely free." }
+    "f4": { "title": "Constant Updates", "desc": "New AI models and features every week, completely free." }
   },
   "showcase": { "title": "Made with AI Factory", "sub": "Real creations from our users" },
   "how": {
