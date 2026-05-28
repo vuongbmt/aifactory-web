@@ -59,7 +59,7 @@
   },
   "faq": {
     "title": "Câu hỏi thường gặp",
-    "q1": "AI Factory có thực sự miễn phí?",
+    "q1": "AI Factory có miễn phí?",
     "a1": "Có. Phiên bản hiện tại hoàn toàn miễn phí, không giới hạn số lượng ảnh/video tạo ra.",
     "q2": "Tôi có cần kết nối internet?",
     "a2": "Chỉ cần internet khi tải model lần đầu. Sau đó có thể dùng offline hoàn toàn.",
