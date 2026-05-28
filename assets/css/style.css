@@ -259,6 +259,24 @@ ul { list-style: none; }
 .feature h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
 .feature p { color: var(--text-dim); font-size: 15px; }
 
+/* ===== Showcase Video ===== */
+.showcase-video-wrap {
+  width: 100%;
+  max-width: 860px;
+  margin: 0 auto 40px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: #000;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+.showcase-video-wrap video {
+  width: 100%;
+  display: block;
+  max-height: 480px;
+  object-fit: contain;
+}
+
 /* ===== Gallery ===== */
 .gallery {
   display: grid;
