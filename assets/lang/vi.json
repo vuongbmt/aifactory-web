@@ -4,6 +4,7 @@
     "features": "Tính năng",
     "showcase": "Showcase",
     "how": "Cách dùng",
+    "pricing": "Bảng giá",
     "requirements": "Yêu cầu",
     "faq": "FAQ"
   },
@@ -69,6 +70,10 @@
     "a4": "Có thể chạy nhưng tốc độ sẽ chậm. Khuyến nghị máy có GPU rời để có trải nghiệm tốt nhất.",
     "q5": "Dữ liệu của tôi có an toàn?",
     "a5": "Tuyệt đối. Mọi xử lý đều diễn ra trên máy bạn, không có dữ liệu nào được gửi lên server."
+  },
+  "pricing": {
+    "title": "Bảng giá",
+    "sub": "Chọn gói phù hợp với nhu cầu của bạn"
   },
   "footer": {
     "tagline": "Xưởng tạo ảnh & video AI tự động.",

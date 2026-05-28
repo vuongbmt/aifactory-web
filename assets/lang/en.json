@@ -4,6 +4,7 @@
     "features": "Features",
     "showcase": "Showcase",
     "how": "How it works",
+    "pricing": "Pricing",
     "requirements": "Requirements",
     "faq": "FAQ"
   },
@@ -69,6 +70,10 @@
     "a4": "It can run, but will be slower. A dedicated GPU is recommended for the best experience.",
     "q5": "Is my data safe?",
     "a5": "Absolutely. All processing happens on your machine — no data is sent to any server."
+  },
+  "pricing": {
+    "title": "Pricing",
+    "sub": "Choose the plan that fits your needs"
   },
   "footer": {
     "tagline": "Automated AI image & video studio.",
