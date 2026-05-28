@@ -26,7 +26,7 @@
     "f2": { "title": "Character sync", "desc": "Keep faces and character styles consistent across hundreds of images and videos." },
     "f3": { "title": "Scene sync", "desc": "Replicate exact backgrounds, lighting, and environments across your entire batch." },
     "f4": { "title": "Voice sync", "desc": "Clone and sync AI voiceovers for consistent narration across your entire video series." },
-    "f5": { "title": "No Google account needed", "desc": "Runs entirely on your machine — no sign-up, no account linking, no external API dependency." }
+    "f5": { "title": "No Google account needed", "desc": "No need to log in with a Google account. Just download the app and use it straight away." }
   },
   "showcase": { "title": "Made with AI Factory", "sub": "Real creations from our users" },
   "how": {

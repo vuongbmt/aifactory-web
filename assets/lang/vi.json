@@ -26,7 +26,7 @@
     "f2": { "title": "Đồng bộ nhân vật", "desc": "Giữ nguyên khuôn mặt, phong cách nhân vật nhất quán xuyên suốt hàng trăm ảnh/video." },
     "f3": { "title": "Đồng bộ bối cảnh", "desc": "Lặp lại đúng bối cảnh, ánh sáng, môi trường theo ý muốn trên toàn bộ batch." },
     "f4": { "title": "Đồng bộ giọng nói", "desc": "Clone và đồng bộ giọng đọc AI, tạo lời thuyết minh đồng nhất cho toàn bộ loạt video." },
-    "f5": { "title": "Không cần tài khoản Google", "desc": "Chạy hoàn toàn trên máy của bạn — không đăng ký, không liên kết tài khoản, không phụ thuộc API bên ngoài." }
+    "f5": { "title": "Không cần tài khoản Google", "desc": "Không cần đăng nhập tài khoản Google để sử dụng. Chỉ cần tải app và sử dụng xuyên suốt." }
   },
   "showcase": { "title": "Tác phẩm từ AI Factory", "sub": "Những gì người dùng đã tạo ra" },
   "how": {
