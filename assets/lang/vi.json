@@ -22,10 +22,11 @@
   "features": {
     "title": "Tính năng nổi bật",
     "sub": "Mọi công cụ bạn cần để tạo nội dung AI chuyên nghiệp",
-    "f1": { "title": "Tạo ảnh AI", "desc": "Chuyển văn bản thành ảnh chất lượng cao với hàng trăm phong cách nghệ thuật." },
-    "f2": { "title": "Tạo video AI", "desc": "Biến ảnh tĩnh hoặc kịch bản thành video chuyển động mượt mà." },
-    "f3": { "title": "Tự động hàng loạt", "desc": "Tạo hàng trăm nội dung cùng lúc theo template có sẵn." },
-    "f4": { "title": "Cập nhật liên tục", "desc": "Thêm model AI và tính năng mới mỗi tuần, hoàn toàn miễn phí." }
+    "f1": { "title": "Tạo 1.000 ảnh + video/giờ", "desc": "Xử lý hàng loạt với tốc độ cao — 1.000 ảnh và video mỗi giờ, tự động không cần giám sát." },
+    "f2": { "title": "Đồng bộ nhân vật", "desc": "Giữ nguyên khuôn mặt, phong cách nhân vật nhất quán xuyên suốt hàng trăm ảnh/video." },
+    "f3": { "title": "Đồng bộ bối cảnh", "desc": "Lặp lại đúng bối cảnh, ánh sáng, môi trường theo ý muốn trên toàn bộ batch." },
+    "f4": { "title": "Đồng bộ giọng nói", "desc": "Clone và đồng bộ giọng đọc AI, tạo lời thuyết minh đồng nhất cho toàn bộ loạt video." },
+    "f5": { "title": "Không cần tài khoản Google", "desc": "Chạy hoàn toàn trên máy của bạn — không đăng ký, không liên kết tài khoản, không phụ thuộc API bên ngoài." }
   },
   "showcase": { "title": "Tác phẩm từ AI Factory", "sub": "Những gì người dùng đã tạo ra" },
   "how": {

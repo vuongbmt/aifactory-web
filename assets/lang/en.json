@@ -22,10 +22,11 @@
   "features": {
     "title": "Powerful features",
     "sub": "Everything you need to create professional AI content",
-    "f1": { "title": "AI Image Generation", "desc": "Turn text into high-quality images with hundreds of artistic styles." },
-    "f2": { "title": "AI Video Generation", "desc": "Transform still images or scripts into smooth motion videos." },
-    "f3": { "title": "Batch Automation", "desc": "Generate hundreds of pieces of content at once using templates." },
-    "f4": { "title": "Constant Updates", "desc": "New AI models and features every week, completely free." }
+    "f1": { "title": "1,000 images + videos/hour", "desc": "High-speed batch processing — 1,000 images and videos per hour, fully automated without supervision." },
+    "f2": { "title": "Character sync", "desc": "Keep faces and character styles consistent across hundreds of images and videos." },
+    "f3": { "title": "Scene sync", "desc": "Replicate exact backgrounds, lighting, and environments across your entire batch." },
+    "f4": { "title": "Voice sync", "desc": "Clone and sync AI voiceovers for consistent narration across your entire video series." },
+    "f5": { "title": "No Google account needed", "desc": "Runs entirely on your machine — no sign-up, no account linking, no external API dependency." }
   },
   "showcase": { "title": "Made with AI Factory", "sub": "Real creations from our users" },
   "how": {
