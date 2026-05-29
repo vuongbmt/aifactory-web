@@ -1,7 +1,7 @@
 # Production Caddyfile - dùng khi đã trỏ domain
 # Chạy: caddy run --config Caddyfile
 
-vuongbmt.space, www.vuongbmt.space {
+aifactory.edu.vn, www.aifactory.edu.vn {
 	root * C:/Users/Admin/Desktop/webTool
 	encode gzip zstd
 	file_server

@@ -2,7 +2,7 @@
 
 Trang quảng cáo cho app **AI Factory** (Windows/macOS), song ngữ Việt/Anh, build bằng HTML/CSS/JS thuần.
 
-Domain: **vuongbmt.space** · Self-host trên PC cá nhân.
+Domain: **aifactory.edu.vn** · Self-host trên PC cá nhân.
 
 ---
 
@@ -47,7 +47,7 @@ Click chuột phải `index.html` → "Open with Live Server".
 
 ---
 
-## 🌐 Deploy production (PC cá nhân + domain vuongbmt.space)
+## 🌐 Deploy production (PC cá nhân + domain aifactory.edu.vn)
 
 ### Bước 1: Cài Caddy làm Windows service
 Caddy tự động cấp HTTPS từ Let's Encrypt khi có domain.
@@ -61,7 +61,7 @@ winget install CaddyServer.Caddy
 
 ### Bước 2: Setup Cloudflare Tunnel (khuyên dùng — không cần mở port router)
 
-1. Đăng ký domain `vuongbmt.space` vào Cloudflare (đổi nameserver tại nhà cung cấp .space sang Cloudflare).
+1. Đăng ký domain `aifactory.edu.vn` vào Cloudflare (đổi nameserver tại tenten.vn sang Cloudflare).
 2. Cài `cloudflared`:
    ```powershell
    winget install Cloudflare.cloudflared
@@ -70,17 +70,17 @@ winget install CaddyServer.Caddy
    ```powershell
    cloudflared tunnel login
    cloudflared tunnel create aifactory
-   cloudflared tunnel route dns aifactory vuongbmt.space
-   cloudflared tunnel route dns aifactory www.vuongbmt.space
+   cloudflared tunnel route dns aifactory aifactory.edu.vn
+   cloudflared tunnel route dns aifactory www.aifactory.edu.vn
    ```
 4. Tạo file `C:\Users\Admin\.cloudflared\config.yml`:
    ```yaml
    tunnel: aifactory
    credentials-file: C:\Users\Admin\.cloudflared\<TUNNEL-ID>.json
    ingress:
-     - hostname: vuongbmt.space
+     - hostname: aifactory.edu.vn
        service: http://localhost:8080
-     - hostname: www.vuongbmt.space
+     - hostname: www.aifactory.edu.vn
        service: http://localhost:8080
      - service: http_status:404
    ```
@@ -99,7 +99,7 @@ winget install CaddyServer.Caddy
 ### Bước 3 (cách 2): Mở port trực tiếp
 Nếu muốn tự host không qua Cloudflare:
 - Mở port 80, 443 trên router (port forwarding về IP PC)
-- Trỏ A record `vuongbmt.space` → IP công cộng
+- Trỏ A record `aifactory.edu.vn` → IP công cộng
 - Chạy `caddy run --config Caddyfile` (sẽ tự xin SSL từ Let's Encrypt)
 - ⚠️ Cần IP tĩnh hoặc dùng DDNS
 
