@@ -2,11 +2,11 @@
 # Chạy: caddy run --config Caddyfile
 
 # Cả 2 domain cùng phục vụ nội dung.
-# Khi aifactory.edu.vn hoạt động ổn định, đổi block vuongbmt thành:
+# Khi aifactory.id.vn hoạt động ổn định, đổi block vuongbmt thành:
 #   vuongbmt.space, www.vuongbmt.space {
-#       redir https://aifactory.edu.vn{uri} 301
+#       redir https://aifactory.id.vn{uri} 301
 #   }
-vuongbmt.space, www.vuongbmt.space, aifactory.edu.vn, www.aifactory.edu.vn {
+vuongbmt.space, www.vuongbmt.space, aifactory.id.vn, www.aifactory.id.vn {
 	root * C:/Users/Admin/Desktop/webTool
 	encode gzip zstd
 	file_server
