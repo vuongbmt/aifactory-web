@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/style.css?v=3" />
+  <link rel="stylesheet" href="assets/css/style.css?v=4" />
 </head>
 <body>
 
@@ -209,7 +209,7 @@
           <div class="pricing-perks">
             <span>✓ Upscale</span>
           </div>
-          <a href="https://zalo.me/g/z2cntcd5tj2uvuywul2" class="btn-pricing btn-pricing--blue" target="_blank" rel="noopener">🛒 Mua gói</a>
+          <a href="#" class="btn-pricing btn-pricing--blue" data-plan="PRO" data-amount="289000" data-price="289.000đ">🛒 Mua gói</a>
         </div>
 
         <!-- PRO++ -->
@@ -232,7 +232,7 @@
             <span>✓ Upscale</span>
             <span>✓ Priority Queue</span>
           </div>
-          <a href="https://zalo.me/g/z2cntcd5tj2uvuywul2" class="btn-pricing btn-pricing--purple" target="_blank" rel="noopener">🛒 Mua gói</a>
+          <a href="#" class="btn-pricing btn-pricing--purple" data-plan="PRO++" data-amount="549000" data-price="549.000đ">🛒 Mua gói</a>
         </div>
 
         <!-- PREMIUM -->
@@ -258,7 +258,7 @@
             <span>✓ Priority Queue</span>
             <span>✓ Premium Support</span>
           </div>
-          <a href="https://zalo.me/g/z2cntcd5tj2uvuywul2" class="btn-pricing btn-pricing--pink" target="_blank" rel="noopener">🛒 Mua gói</a>
+          <a href="#" class="btn-pricing btn-pricing--pink" data-plan="PREMIUM" data-amount="1349000" data-price="1.349.000đ">🛒 Mua gói</a>
         </div>
 
         <!-- FACTORY -->
@@ -283,7 +283,7 @@
             <span>✓ Priority Queue</span>
             <span>✓ Premium Support</span>
           </div>
-          <a href="https://zalo.me/g/z2cntcd5tj2uvuywul2" class="btn-pricing btn-pricing--orange" target="_blank" rel="noopener">🛒 Mua gói</a>
+          <a href="#" class="btn-pricing btn-pricing--orange" data-plan="FACTORY" data-amount="2989000" data-price="2.989.000đ">🛒 Mua gói</a>
         </div>
 
       </div>
@@ -357,6 +357,39 @@
       <p>© 2026 AI Factory — vuongbmt.space</p>
     </div>
   </footer>
+
+  <!-- ===== Payment Modal ===== -->
+  <div id="paymentModal" class="pay-overlay" aria-hidden="true">
+    <div class="pay-modal">
+      <button class="pay-close" id="payClose" aria-label="Đóng">×</button>
+      <h2 class="pay-title" id="payTitle">Mua gói PRO</h2>
+      <p class="pay-hint">📱 Quét mã QR bằng app ngân hàng...</p>
+
+      <div class="pay-qr-wrap">
+        <img id="payQR" src="" alt="VietQR" />
+      </div>
+
+      <div class="pay-info">
+        <div><span>Ngân hàng:</span> <strong>Techcombank</strong></div>
+        <div><span>Số tài khoản:</span> <strong id="payAccNum">19038709343023</strong></div>
+        <div><span>Chủ tài khoản:</span> <strong>HOANG NGOC QUOC</strong></div>
+        <div><span>Số tiền:</span> <strong id="payAmount"></strong></div>
+        <div><span>Nội dung CK:</span> <strong id="payContent"></strong></div>
+      </div>
+
+      <div class="pay-notice">
+        <p>👉 Quét QR bằng app ngân hàng — hệ thống tự động kích hoạt gói trong vòng 1–5 phút sau khi nhận được tiền.</p>
+        <p>⚠️ Vui lòng giữ <b>nội dung chuyển khoản</b> chính xác để khớp đơn.</p>
+      </div>
+
+      <div class="pay-actions">
+        <button class="pay-btn pay-btn--copy" id="payCopyAcc">📋 Sao chép số TK</button>
+        <button class="pay-btn pay-btn--copy" id="payCopyContent">📋 Sao chép nội dung</button>
+        <a href="https://zalo.me/g/z2cntcd5tj2uvuywul2" class="pay-btn pay-btn--done" target="_blank" rel="noopener">✅ Tôi đã chuyển khoản</a>
+        <button class="pay-btn pay-btn--close" id="payCloseBtn">✖ Đóng</button>
+      </div>
+    </div>
+  </div>
 
   <script src="assets/js/i18n.js"></script>
   <script src="assets/js/main.js"></script>

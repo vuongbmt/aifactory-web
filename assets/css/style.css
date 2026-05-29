@@ -416,6 +416,110 @@ ul { list-style: none; }
   .pricing-grid { grid-template-columns: 1fr; }
 }
 
+/* ===== Payment Modal ===== */
+.pay-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(6px);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+.pay-overlay.active { display: flex; }
+.pay-modal {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px 20px;
+  max-width: 460px;
+  width: 100%;
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+.pay-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 22px;
+  color: var(--text-dim);
+  background: none;
+  border: none;
+  cursor: pointer;
+  line-height: 1;
+}
+.pay-close:hover { color: var(--text); }
+.pay-title {
+  font-size: 20px;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 4px;
+}
+.pay-hint {
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-dim);
+  margin-bottom: 16px;
+}
+.pay-qr-wrap {
+  width: 220px;
+  margin: 0 auto 16px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: #fff;
+}
+.pay-qr-wrap img { width: 100%; display: block; }
+.pay-info {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 13px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+.pay-info div { display: flex; justify-content: space-between; gap: 8px; }
+.pay-info span { color: var(--text-dim); }
+.pay-notice {
+  background: rgba(168,85,247,0.08);
+  border: 1px solid rgba(168,85,247,0.2);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 12px;
+  color: var(--text-dim);
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.pay-notice b { color: var(--text); }
+.pay-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.pay-btn {
+  display: block;
+  text-align: center;
+  padding: 10px 8px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: opacity 0.2s;
+}
+.pay-btn:hover { opacity: 0.85; }
+.pay-btn--copy { background: #3b82f6; color: #fff; }
+.pay-btn--done { background: #22c55e; color: #fff; }
+.pay-btn--close { background: var(--surface-2); color: var(--text); border: 1px solid var(--border); }
+
 /* ===== Steps ===== */
 .steps .step {
   background: var(--surface);
