@@ -1,3 +1,28 @@
+// ===== Carousel arrows =====
+(function () {
+  function initArrows(carouselId, prevId, nextId) {
+    const track = document.getElementById(carouselId);
+    const prev  = document.getElementById(prevId);
+    const next  = document.getElementById(nextId);
+    if (!track || !prev || !next) return;
+
+    const STEP = 260; // px per click
+
+    function update() {
+      prev.disabled = track.scrollLeft <= 0;
+      next.disabled = track.scrollLeft >= track.scrollWidth - track.clientWidth - 2;
+    }
+
+    prev.addEventListener('click', () => { track.scrollBy({ left: -STEP, behavior: 'smooth' }); });
+    next.addEventListener('click', () => { track.scrollBy({ left:  STEP, behavior: 'smooth' }); });
+    track.addEventListener('scroll', update, { passive: true });
+    update();
+  }
+
+  initArrows('featCarousel', 'featPrev', 'featNext');
+  initArrows('stepCarousel', 'stepPrev', 'stepNext');
+})();
+
 // ===== Mobile menu =====
 (function () {
   const toggle = document.getElementById('menuToggle');

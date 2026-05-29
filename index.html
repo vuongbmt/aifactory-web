@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/style.css?v=7" />
+  <link rel="stylesheet" href="assets/css/style.css?v=8" />
 </head>
 <body>
 
@@ -169,22 +169,36 @@
         <p data-i18n="how.sub">Đơn giản đến mức ai cũng dùng được</p>
       </div>
 
-      <div class="grid grid-3 steps">
-        <div class="step">
-          <div class="step-num">1</div>
-          <h3 data-i18n="how.s1.title">Tải & cài đặt</h3>
-          <p data-i18n="how.s1.desc">Tải bản cài cho Windows hoặc macOS. Chạy file và làm theo hướng dẫn.</p>
+      <div class="carousel-wrap">
+        <button class="carousel-arrow carousel-arrow--prev" id="stepPrev" aria-label="Trước">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <div class="features-carousel" id="stepCarousel">
+          <div class="card feature">
+            <div class="feature-icon-wrap step-icon-wrap--1">
+              <span class="step-num-inline">1</span>
+            </div>
+            <h3 data-i18n="how.s1.title">Tải &amp; cài đặt</h3>
+            <p data-i18n="how.s1.desc">Tải bản cài cho Windows hoặc macOS. Chạy file và làm theo hướng dẫn.</p>
+          </div>
+          <div class="card feature">
+            <div class="feature-icon-wrap step-icon-wrap--2">
+              <span class="step-num-inline">2</span>
+            </div>
+            <h3 data-i18n="how.s2.title">Nhập ý tưởng</h3>
+            <p data-i18n="how.s2.desc">Chọn template hoặc nhập mô tả nội dung bạn muốn tạo.</p>
+          </div>
+          <div class="card feature">
+            <div class="feature-icon-wrap step-icon-wrap--3">
+              <span class="step-num-inline">3</span>
+            </div>
+            <h3 data-i18n="how.s3.title">Xuất &amp; dùng</h3>
+            <p data-i18n="how.s3.desc">Nhận ảnh/video chất lượng cao, lưu về máy ngay lập tức.</p>
+          </div>
         </div>
-        <div class="step">
-          <div class="step-num">2</div>
-          <h3 data-i18n="how.s2.title">Nhập ý tưởng</h3>
-          <p data-i18n="how.s2.desc">Chọn template hoặc nhập mô tả nội dung bạn muốn tạo.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">3</div>
-          <h3 data-i18n="how.s3.title">Xuất & dùng</h3>
-          <p data-i18n="how.s3.desc">Nhận ảnh/video chất lượng cao, lưu về máy ngay lập tức.</p>
-        </div>
+        <button class="carousel-arrow carousel-arrow--next" id="stepNext" aria-label="Tiếp">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
       </div>
     </div>
   </section>
@@ -403,6 +417,6 @@
   </div>
 
   <script src="assets/js/i18n.js?v=2"></script>
-  <script src="assets/js/main.js?v=2"></script>
+  <script src="assets/js/main.js?v=3"></script>
 </body>
 </html>
