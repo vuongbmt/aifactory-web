@@ -278,18 +278,31 @@ ul { list-style: none; }
   display: inline-block;
 }
 
-/* Features 3+2 centered grid */
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 24px;
+/* Features horizontal scroll carousel */
+.features-carousel {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding: 8px 4px 20px;
+  /* hide scrollbar on all browsers */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  /* allow overflow beyond container */
+  margin-left: -24px;
+  margin-right: -24px;
+  padding-left: 24px;
+  padding-right: 24px;
 }
-.features-grid .feature { grid-column: span 2; }
-.features-grid .feature:nth-child(4) { grid-column: 2 / span 2; }
-.features-grid .feature:nth-child(5) { grid-column: 4 / span 2; }
+.features-carousel::-webkit-scrollbar { display: none; }
+.features-carousel .feature {
+  flex: 0 0 280px;
+  scroll-snap-align: start;
+}
 
-.feature h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
-.feature p { color: var(--text-dim); font-size: 15px; }
+.feature h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+.feature p { color: var(--text-dim); font-size: 14px; line-height: 1.6; }
 
 /* ===== Showcase Video ===== */
 .showcase-video-wrap {
@@ -673,11 +686,7 @@ ul { list-style: none; }
   .grid-3 { grid-template-columns: repeat(2, 1fr); }
   .gallery { grid-template-columns: repeat(2, 1fr); }
   .footer-inner { grid-template-columns: 1fr; gap: 32px; }
-  /* Features: collapse to 2-col on tablet */
-  .features-grid { grid-template-columns: repeat(2, 1fr); }
-  .features-grid .feature,
-  .features-grid .feature:nth-child(4),
-  .features-grid .feature:nth-child(5) { grid-column: span 1; }
+  /* Features: already horizontal scroll, no override needed */
 }
 @media (max-width: 640px) {
   .section { padding: 64px 0; }
@@ -696,11 +705,8 @@ ul { list-style: none; }
   }
   .nav.open a { padding: 12px 0; border-bottom: 1px solid var(--border); }
   .grid-3, .grid-2 { grid-template-columns: 1fr; }
-  /* Features: single column on mobile */
-  .features-grid { grid-template-columns: 1fr; }
-  .features-grid .feature,
-  .features-grid .feature:nth-child(4),
-  .features-grid .feature:nth-child(5) { grid-column: span 1; }
+  /* Features: narrower cards on mobile */
+  .features-carousel .feature { flex: 0 0 240px; }
   .gallery { grid-template-columns: repeat(2, 1fr); }
   .hero-meta { flex-wrap: wrap; gap: 20px; }
   .hero-meta strong { font-size: 20px; }
