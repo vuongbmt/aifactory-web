@@ -1,12 +1,12 @@
 # Production Caddyfile - dùng khi đã trỏ domain
 # Chạy: caddy run --config Caddyfile
 
-# Redirect domain cũ sang domain mới (301 permanent)
-vuongbmt.space, www.vuongbmt.space {
-	redir https://aifactory.edu.vn{uri} 301
-}
-
-aifactory.edu.vn, www.aifactory.edu.vn {
+# Cả 2 domain cùng phục vụ nội dung.
+# Khi aifactory.edu.vn hoạt động ổn định, đổi block vuongbmt thành:
+#   vuongbmt.space, www.vuongbmt.space {
+#       redir https://aifactory.edu.vn{uri} 301
+#   }
+vuongbmt.space, www.vuongbmt.space, aifactory.edu.vn, www.aifactory.edu.vn {
 	root * C:/Users/Admin/Desktop/webTool
 	encode gzip zstd
 	file_server
