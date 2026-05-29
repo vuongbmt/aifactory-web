@@ -2,7 +2,7 @@
   "meta": { "description": "AI Factory - Xưởng tạo ảnh và video AI tự động cho Windows và macOS" },
   "nav": {
     "features": "Tính năng",
-    "showcase": "Showcase",
+    "showcase": "Sản phẩm",
     "how": "Cách dùng",
     "pricing": "Bảng giá",
     "requirements": "Yêu cầu",
@@ -16,8 +16,9 @@
     "ctaPrimary": "Tải miễn phí",
     "ctaSecondary": "Xem demo",
     "meta1": "Miễn phí dùng thử",
-    "meta2": "Không cần đăng ký",
-    "meta3": "Chất lượng xuất"
+    "meta2": "imgs/h",
+    "meta3": "Chất lượng xuất",
+    "meta4": "vids/h"
   },
   "features": {
     "title": "Tính năng nổi bật",

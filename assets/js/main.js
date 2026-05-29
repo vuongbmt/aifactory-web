@@ -83,12 +83,12 @@
     document.body.style.overflow = '';
   }
 
-  // Intercept btn-pricing clicks
-  document.querySelectorAll('.btn-pricing[data-plan]').forEach(function (btn) {
-    btn.addEventListener('click', function (e) {
-      e.preventDefault();
-      openModal(btn.dataset.plan, btn.dataset.amount, btn.dataset.price);
-    });
+  // Intercept btn-pricing clicks (event delegation — robust against DOM rewrite by i18n)
+  document.addEventListener('click', function (e) {
+    const btn = e.target.closest('.btn-pricing[data-plan]');
+    if (!btn) return;
+    e.preventDefault();
+    openModal(btn.dataset.plan, btn.dataset.amount, btn.dataset.price);
   });
 
   // Copy account number

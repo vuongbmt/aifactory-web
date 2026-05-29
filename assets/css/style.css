@@ -255,11 +255,39 @@ ul { list-style: none; }
   box-shadow: var(--shadow);
 }
 .feature:hover { transform: translateY(-4px); border-color: rgba(37,99,235,0.3); box-shadow: var(--shadow-md); }
+
+/* Feature icon wrap */
+.feature-icon-wrap {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: var(--gradient-soft);
+  border: 1px solid rgba(37,99,235,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  transition: background 0.25s ease;
+}
+.feature:hover .feature-icon-wrap {
+  background: var(--gradient);
+}
 .feature-icon {
-  font-size: 36px;
-  margin-bottom: 16px;
+  font-size: 26px;
+  line-height: 1;
   display: inline-block;
 }
+
+/* Features 3+2 centered grid */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 24px;
+}
+.features-grid .feature { grid-column: span 2; }
+.features-grid .feature:nth-child(4) { grid-column: 2 / span 2; }
+.features-grid .feature:nth-child(5) { grid-column: 4 / span 2; }
+
 .feature h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
 .feature p { color: var(--text-dim); font-size: 15px; }
 
@@ -307,7 +335,7 @@ ul { list-style: none; }
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  align-items: start;
+  align-items: stretch;
 }
 .pricing-card {
   background: var(--surface);
@@ -645,6 +673,11 @@ ul { list-style: none; }
   .grid-3 { grid-template-columns: repeat(2, 1fr); }
   .gallery { grid-template-columns: repeat(2, 1fr); }
   .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+  /* Features: collapse to 2-col on tablet */
+  .features-grid { grid-template-columns: repeat(2, 1fr); }
+  .features-grid .feature,
+  .features-grid .feature:nth-child(4),
+  .features-grid .feature:nth-child(5) { grid-column: span 1; }
 }
 @media (max-width: 640px) {
   .section { padding: 64px 0; }
@@ -663,6 +696,11 @@ ul { list-style: none; }
   }
   .nav.open a { padding: 12px 0; border-bottom: 1px solid var(--border); }
   .grid-3, .grid-2 { grid-template-columns: 1fr; }
+  /* Features: single column on mobile */
+  .features-grid { grid-template-columns: 1fr; }
+  .features-grid .feature,
+  .features-grid .feature:nth-child(4),
+  .features-grid .feature:nth-child(5) { grid-column: span 1; }
   .gallery { grid-template-columns: repeat(2, 1fr); }
   .hero-meta { flex-wrap: wrap; gap: 20px; }
   .hero-meta strong { font-size: 20px; }
