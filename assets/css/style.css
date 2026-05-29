@@ -471,6 +471,7 @@ ul { list-style: none; }
 .pricing-price {
   display: flex;
   align-items: baseline;
+  justify-content: center;
   gap: 8px;
   padding: 12px 16px 0;
   flex-shrink: 0;
@@ -540,6 +541,12 @@ ul { list-style: none; }
   font-weight: 600;
   padding: 12px 16px 0;
   flex-shrink: 0;
+}
+.perk--unavail {
+  color: var(--text-dim);
+  font-weight: 400;
+  text-decoration: line-through;
+  opacity: 0.45;
 }
 
 /* buy button */
