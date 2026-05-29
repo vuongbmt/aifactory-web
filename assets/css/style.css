@@ -409,17 +409,48 @@ ul { list-style: none; }
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   align-items: stretch;
+  /* subgrid: let child rows align across columns */
+  grid-template-rows: auto;
 }
 .pricing-card {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  padding: 28px 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
+  padding: 0 0 20px;
+  display: grid;
+  grid-template-rows: auto auto auto auto 1fr auto auto;
+  /* badge | name | price | duration | features | perks | btn */
   box-shadow: var(--shadow);
+  overflow: hidden;
 }
+.pricing-card > * {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+/* first real row: top badge (sale/popular) or placeholder */
+.pricing-card-top {
+  min-height: 36px;
+  display: flex;
+  align-items: center;
+  padding-top: 16px;
+  padding-bottom: 0;
+}
+/* name row */
+.pricing-name {
+  display: block;
+  margin: 0 20px;
+  padding: 9px 12px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 800;
+  text-align: center;
+  color: #fff;
+  letter-spacing: 0.04em;
+}
+.pricing-name--blue   { background: linear-gradient(135deg, #3b9eff, #2563eb); }
+.pricing-name--purple { background: linear-gradient(135deg, #c084fc, #9333ea); }
+.pricing-name--pink   { background: linear-gradient(135deg, #f472b6, #ec4899); }
+.pricing-name--orange { background: linear-gradient(135deg, #fb923c, #f59e0b); }
 .pricing-card--featured {
   border-color: #2563eb;
   box-shadow: 0 0 0 2px #2563eb, 0 8px 32px rgba(37,99,235,0.18);
@@ -464,6 +495,8 @@ ul { list-style: none; }
   align-items: baseline;
   gap: 8px;
   flex-wrap: wrap;
+  padding-top: 14px;
+  padding-bottom: 0;
 }
 .pricing-amount {
   font-size: 26px;
@@ -485,6 +518,7 @@ ul { list-style: none; }
   font-weight: 600;
   text-align: center;
   color: #92400e;
+  margin-top: 10px;
 }
 .pricing-duration--blue   { border-color: #3b9eff; background: rgba(59,158,255,0.07); color: #1d4ed8; }
 .pricing-duration--purple { border-color: #a855f7; background: rgba(168,85,247,0.07); color: #7e22ce; }
@@ -497,7 +531,8 @@ ul { list-style: none; }
   gap: 7px;
   font-size: 13px;
   color: var(--text-dim);
-  flex: 1;
+  padding-top: 10px;
+  padding-bottom: 0;
 }
 .pricing-features li strong { color: var(--text); }
 .pricing-perks {
@@ -507,6 +542,7 @@ ul { list-style: none; }
   font-size: 13px;
   color: #16a34a;
   font-weight: 600;
+  padding-top: 10px;
 }
 .btn-pricing {
   display: block;
@@ -517,7 +553,7 @@ ul { list-style: none; }
   font-size: 15px;
   color: white;
   transition: opacity 0.2s, transform 0.2s;
-  margin-top: 4px;
+  margin-top: 14px;
 }
 .btn-pricing:hover { opacity: 0.85; transform: translateY(-2px); }
 .btn-pricing--blue   { background: linear-gradient(135deg, #3b9eff, #2563eb); }
