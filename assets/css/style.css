@@ -298,31 +298,43 @@ ul { list-style: none; }
 /* Features horizontal scroll carousel */
 .carousel-wrap {
   position: relative;
-  display: flex;
-  align-items: center;
-  gap: 0;
 }
+/* Fade-out gradient hints at edges */
+.carousel-wrap::after {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 80px; height: 100%;
+  background: linear-gradient(to right, transparent, var(--bg));
+  pointer-events: none;
+  z-index: 1;
+  transition: opacity 0.3s;
+}
+.carousel-wrap.at-end::after { opacity: 0; }
+
 .carousel-arrow {
-  flex-shrink: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-60%);
   width: 40px;
   height: 40px;
   border-radius: 50%;
   background: var(--surface);
   border: 1px solid var(--border);
-  box-shadow: var(--shadow);
+  box-shadow: 0 4px 16px rgba(37,99,235,0.15);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  z-index: 2;
-  transition: background 0.2s, box-shadow 0.2s;
+  z-index: 3;
+  transition: opacity 0.2s, box-shadow 0.2s, background 0.2s;
   color: var(--text);
 }
 .carousel-arrow:hover { background: var(--surface-2); box-shadow: var(--shadow-md); }
-.carousel-arrow:disabled { opacity: 0.3; cursor: default; }
+.carousel-arrow.hidden { opacity: 0; pointer-events: none; }
 .carousel-arrow svg { width: 18px; height: 18px; }
-.carousel-arrow--prev { margin-right: 12px; }
-.carousel-arrow--next { margin-left: 12px; }
+.carousel-arrow--prev { left: -20px; }
+.carousel-arrow--next { right: -20px; }
 
 .features-carousel {
   display: flex;
@@ -333,12 +345,19 @@ ul { list-style: none; }
   padding: 8px 4px 20px;
   scrollbar-width: none;
   -ms-overflow-style: none;
-  flex: 1;
-  min-width: 0;
 }
 .features-carousel::-webkit-scrollbar { display: none; }
-.features-carousel .feature {
+
+/* 5-card features: fixed width cards */
+#featCarousel .feature {
   flex: 0 0 240px;
+  scroll-snap-align: start;
+}
+
+/* 3-card steps: stretch to fill full row */
+#stepCarousel .feature {
+  flex: 1 1 0;
+  min-width: 200px;
   scroll-snap-align: start;
 }
 

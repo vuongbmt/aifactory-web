@@ -4,19 +4,27 @@
     const track = document.getElementById(carouselId);
     const prev  = document.getElementById(prevId);
     const next  = document.getElementById(nextId);
+    const wrap  = track && track.closest('.carousel-wrap');
     if (!track || !prev || !next) return;
 
-    const STEP = 260; // px per click
+    const STEP = 260;
 
     function update() {
-      prev.disabled = track.scrollLeft <= 0;
-      next.disabled = track.scrollLeft >= track.scrollWidth - track.clientWidth - 2;
+      const atStart = track.scrollLeft <= 2;
+      const atEnd   = track.scrollLeft >= track.scrollWidth - track.clientWidth - 2;
+      const canScroll = track.scrollWidth > track.clientWidth + 4;
+
+      prev.classList.toggle('hidden', atStart || !canScroll);
+      next.classList.toggle('hidden', atEnd   || !canScroll);
+      if (wrap) wrap.classList.toggle('at-end', atEnd);
     }
 
     prev.addEventListener('click', () => { track.scrollBy({ left: -STEP, behavior: 'smooth' }); });
     next.addEventListener('click', () => { track.scrollBy({ left:  STEP, behavior: 'smooth' }); });
     track.addEventListener('scroll', update, { passive: true });
-    update();
+    window.addEventListener('resize', update, { passive: true });
+    // run after layout settles
+    requestAnimationFrame(update);
   }
 
   initArrows('featCarousel', 'featPrev', 'featNext');
