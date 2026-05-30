@@ -301,43 +301,63 @@ ul { list-style: none; }
 /* Features horizontal scroll carousel */
 .carousel-wrap {
   position: relative;
+  overflow: hidden;
 }
 /* Fade-out gradient hints at edges */
+.carousel-wrap::before,
 .carousel-wrap::after {
   content: '';
   position: absolute;
-  top: 0; right: 0;
-  width: 80px; height: 100%;
-  background: linear-gradient(to right, transparent, var(--bg));
+  top: 0;
+  width: 60px;
+  height: 100%;
   pointer-events: none;
-  z-index: 1;
+  z-index: 2;
   transition: opacity 0.3s;
 }
+.carousel-wrap::before {
+  left: 0;
+  background: linear-gradient(to right, var(--bg), transparent);
+  opacity: 0;
+}
+.carousel-wrap::after {
+  right: 0;
+  background: linear-gradient(to left, var(--bg), transparent);
+}
+.carousel-wrap.at-start::before { opacity: 0; }
 .carousel-wrap.at-end::after { opacity: 0; }
+.carousel-wrap:not(.at-start)::before { opacity: 1; }
 
 .carousel-arrow {
   position: absolute;
   top: 50%;
-  transform: translateY(-60%);
-  width: 40px;
-  height: 40px;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   background: var(--surface);
   border: 1px solid var(--border);
-  box-shadow: 0 4px 16px rgba(37,99,235,0.15);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  z-index: 3;
-  transition: opacity 0.2s, box-shadow 0.2s, background 0.2s;
+  z-index: 4;
+  transition: opacity 0.25s, transform 0.25s, box-shadow 0.2s;
   color: var(--text);
 }
-.carousel-arrow:hover { background: var(--surface-2); box-shadow: var(--shadow-md); }
-.carousel-arrow.hidden { opacity: 0; pointer-events: none; }
+.carousel-arrow:hover {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.18);
+  transform: translateY(-50%) scale(1.08);
+}
+.carousel-arrow.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-50%) scale(0.85);
+}
 .carousel-arrow svg { width: 18px; height: 18px; }
-.carousel-arrow--prev { left: -20px; }
-.carousel-arrow--next { right: -20px; }
+.carousel-arrow--prev { left: 6px; }
+.carousel-arrow--next { right: 6px; }
 
 .features-carousel {
   display: flex;

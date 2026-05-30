@@ -7,23 +7,36 @@
     const wrap  = track && track.closest('.carousel-wrap');
     if (!track || !prev || !next) return;
 
-    const STEP = 260;
+    let scrollTimer = null;
 
     function update() {
-      const atStart = track.scrollLeft <= 2;
-      const atEnd   = track.scrollLeft >= track.scrollWidth - track.clientWidth - 2;
+      const atStart  = track.scrollLeft <= 2;
+      const atEnd    = track.scrollLeft >= track.scrollWidth - track.clientWidth - 2;
       const canScroll = track.scrollWidth > track.clientWidth + 4;
 
       prev.classList.toggle('hidden', atStart || !canScroll);
       next.classList.toggle('hidden', atEnd   || !canScroll);
-      if (wrap) wrap.classList.toggle('at-end', atEnd);
+      if (wrap) {
+        wrap.classList.toggle('at-start', atStart);
+        wrap.classList.toggle('at-end',   atEnd);
+      }
     }
 
-    prev.addEventListener('click', () => { track.scrollBy({ left: -STEP, behavior: 'smooth' }); });
-    next.addEventListener('click', () => { track.scrollBy({ left:  STEP, behavior: 'smooth' }); });
+    function scrollBy(dir) {
+      // scroll by ~80% of visible width so next card peeks in (Apple-style)
+      const step = Math.round(track.clientWidth * 0.8);
+      track.scrollBy({ left: dir * step, behavior: 'smooth' });
+      // fallback: update after scroll animation (~400ms)
+      clearTimeout(scrollTimer);
+      scrollTimer = setTimeout(update, 420);
+    }
+
+    prev.addEventListener('click', () => scrollBy(-1));
+    next.addEventListener('click', () => scrollBy(1));
     track.addEventListener('scroll', update, { passive: true });
+    // scrollend fires when smooth scroll finishes (modern browsers)
+    track.addEventListener('scrollend', update, { passive: true });
     window.addEventListener('resize', update, { passive: true });
-    // run after layout settles
     requestAnimationFrame(update);
   }
 
