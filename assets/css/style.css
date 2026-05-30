@@ -433,10 +433,12 @@ ul { list-style: none; }
   display: flex;
   flex-direction: column;
   box-shadow: var(--shadow);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
 }
-.pricing-card--featured {
+.pricing-card:hover {
   border-color: #2563eb;
   box-shadow: 0 0 0 2px #2563eb, 0 8px 32px rgba(37,99,235,0.18);
+  transform: translateY(-4px);
 }
 /* top badge row — same height on all cards */
 .pricing-card-top {
