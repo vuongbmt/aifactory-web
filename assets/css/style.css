@@ -363,7 +363,6 @@ ul { list-style: none; }
   display: flex;
   gap: 20px;
   overflow-x: auto;
-  scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   padding: 8px 4px 20px;
   scrollbar-width: none;
@@ -374,14 +373,12 @@ ul { list-style: none; }
 /* 5-card features: fixed width cards */
 #featCarousel .feature {
   flex: 0 0 240px;
-  scroll-snap-align: start;
 }
 
 /* 3-card steps: stretch to fill full row */
 #stepCarousel .feature {
   flex: 1 1 0;
   min-width: 200px;
-  scroll-snap-align: start;
 }
 
 .feature h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
@@ -444,7 +441,6 @@ ul { list-style: none; }
   display: flex;
   gap: 20px;
   overflow-x: auto;
-  scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   padding: 8px 4px 20px;
   scrollbar-width: none;
@@ -453,7 +449,6 @@ ul { list-style: none; }
 .pricing-carousel::-webkit-scrollbar { display: none; }
 .pricing-carousel .pricing-card {
   flex: 0 0 280px;
-  scroll-snap-align: start;
 }
 .pricing-card {
   background: var(--surface);

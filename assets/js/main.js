@@ -22,48 +22,45 @@
       }
     }
 
-    // Custom slow smooth scroll (600ms, easeInOutCubic)
-    function smoothScrollBy(distance, duration) {
+    // Custom eased scroll — no scroll-snap interference
+    function animScroll(distance, duration) {
       if (animId) cancelAnimationFrame(animId);
-      const start    = track.scrollLeft;
-      const target   = Math.max(0, Math.min(start + distance, track.scrollWidth - track.clientWidth));
-      const startTime = performance.now();
+      const startPos = track.scrollLeft;
+      const endPos   = Math.max(0, Math.min(startPos + distance, track.scrollWidth - track.clientWidth));
+      const t0       = performance.now();
 
-      function ease(t) {
-        return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
-      }
+      function ease(t) { return t < 0.5 ? 4*t*t*t : 1 - Math.pow(-2*t+2,3)/2; }
 
-      function step(now) {
-        const elapsed  = now - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-        track.scrollLeft = start + (target - start) * ease(progress);
+      function frame(now) {
+        const p = Math.min((now - t0) / duration, 1);
+        track.scrollLeft = startPos + (endPos - startPos) * ease(p);
         update();
-        if (progress < 1) {
-          animId = requestAnimationFrame(step);
-        } else {
-          animId = null;
-          update();
-        }
+        if (p < 1) { animId = requestAnimationFrame(frame); }
+        else { animId = null; update(); }
       }
-      animId = requestAnimationFrame(step);
+      animId = requestAnimationFrame(frame);
     }
 
-    prev.addEventListener('click', () => smoothScrollBy(-Math.round(track.clientWidth * 0.82), 600));
-    next.addEventListener('click', () => smoothScrollBy( Math.round(track.clientWidth * 0.82), 600));
+    prev.addEventListener('click', () => animScroll(-Math.round(track.clientWidth * 0.82), 600));
+    next.addEventListener('click', () => animScroll( Math.round(track.clientWidth * 0.82), 600));
     track.addEventListener('scroll', update, { passive: true });
-    track.addEventListener('scrollend', update, { passive: true });
     window.addEventListener('resize', update, { passive: true });
 
-    // Wait for layout to settle before initial arrow state
-    requestAnimationFrame(() => requestAnimationFrame(() => {
-      update();
-      setTimeout(update, 200);
-    }));
+    // Robust init: fire at multiple points to catch late layout shifts
+    update();
+    requestAnimationFrame(update);
+    setTimeout(update, 100);
+    setTimeout(update, 500);
   }
 
-  initArrows('featCarousel', 'featPrev', 'featNext');
-  initArrows('stepCarousel', 'stepPrev', 'stepNext');
-  initArrows('priceCarousel', 'pricePrev', 'priceNext');
+  // Init after DOM is ready; re-run once all resources load for accurate sizing
+  function setup() {
+    initArrows('featCarousel',  'featPrev',  'featNext');
+    initArrows('stepCarousel',  'stepPrev',  'stepNext');
+    initArrows('priceCarousel', 'pricePrev', 'priceNext');
+  }
+  setup();
+  window.addEventListener('load', setup);
 })();
 
 // ===== Mobile menu =====
