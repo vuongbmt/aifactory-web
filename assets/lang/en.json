@@ -2,7 +2,7 @@
   "meta": { "description": "AI Factory - Automated AI image and video creation studio for Windows and macOS" },
   "nav": {
     "features": "Features",
-    "showcase": "Showcase",
+    "showcase": "Demo",
     "how": "How it works",
     "pricing": "Pricing",
     "requirements": "Requirements",
@@ -29,7 +29,7 @@
     "f4": { "title": "Voice sync", "desc": "Clone and sync AI voiceovers for consistent narration across your entire video series." },
     "f5": { "title": "No Google account needed", "desc": "No need to log in with a Google account. Just download the app and use it straight away." }
   },
-  "showcase": { "title": "Made with AI Factory", "sub": "Real creations from our users" },
+  "showcase": { "title": "AI Factory Demo", "sub": "Real creations from our users" },
   "how": {
     "title": "Get started in 3 steps",
     "sub": "So simple anyone can do it",
@@ -79,7 +79,7 @@
   },
   "footer": {
     "tagline": "Automated AI image & video studio.",
-    "product": "Product",
+    "product": "Demo",
     "legal": "Legal",
     "contact": "Contact",
     "privacy": "Privacy Policy",

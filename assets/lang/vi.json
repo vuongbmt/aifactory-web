@@ -2,7 +2,7 @@
   "meta": { "description": "AI Factory - Xưởng tạo ảnh và video AI tự động cho Windows và macOS" },
   "nav": {
     "features": "Tính năng",
-    "showcase": "Sản phẩm",
+    "showcase": "Demo",
     "how": "Cách dùng",
     "pricing": "Bảng giá",
     "requirements": "Yêu cầu",
@@ -29,7 +29,7 @@
     "f4": { "title": "Đồng bộ giọng nói", "desc": "Clone và đồng bộ giọng đọc AI, tạo lời thuyết minh đồng nhất cho toàn bộ loạt video." },
     "f5": { "title": "Không cần tài khoản Google", "desc": "Không cần đăng nhập tài khoản Google để sử dụng. Chỉ cần tải app và sử dụng xuyên suốt." }
   },
-  "showcase": { "title": "Tác phẩm từ AI Factory", "sub": "Những gì người dùng đã tạo ra" },
+  "showcase": { "title": "Demo AI Factory", "sub": "Những gì người dùng đã tạo ra" },
   "how": {
     "title": "Bắt đầu trong 3 bước",
     "sub": "Đơn giản đến mức ai cũng dùng được",
@@ -79,7 +79,7 @@
   },
   "footer": {
     "tagline": "Xưởng tạo ảnh & video AI tự động.",
-    "product": "Sản phẩm",
+    "product": "Demo",
     "legal": "Pháp lý",
     "contact": "Liên hệ",
     "privacy": "Chính sách bảo mật",
