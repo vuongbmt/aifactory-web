@@ -29,6 +29,7 @@
 
   initArrows('featCarousel', 'featPrev', 'featNext');
   initArrows('stepCarousel', 'stepPrev', 'stepNext');
+  initArrows('priceCarousel', 'pricePrev', 'priceNext');
 })();
 
 // ===== Mobile menu =====

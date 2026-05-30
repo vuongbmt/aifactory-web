@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/style.css?v=17" />
+  <link rel="stylesheet" href="assets/css/style.css?v=18" />
 </head>
 <body>
 
@@ -224,7 +224,11 @@
         <p data-i18n="pricing.sub">Chọn gói phù hợp với nhu cầu của bạn</p>
       </div>
 
-      <div class="pricing-grid">
+      <div class="carousel-wrap">
+        <button class="carousel-arrow carousel-arrow--prev" id="pricePrev" aria-label="Trước">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <div class="pricing-carousel" id="priceCarousel">
 
         <!-- PRO -->
         <div class="pricing-card">
@@ -351,6 +355,7 @@
             <li><span>🎬 Quota Video trọn gói</span><strong>30.000</strong></li>
             <li><span>👥 Luồng ảnh đồng thời</span><strong>12</strong></li>
             <li><span>👥 Luồng video đồng thời</span><strong>12</strong></li>
+            <li><span>⚡ Hệ số tiêu tốn quota</span><strong>×1</strong></li>
           </ul>
           <div class="pricing-perks">
             <span>✓ Upscale</span>
@@ -377,6 +382,7 @@
             <li><span>🎬 Quota Video trọn gói</span><strong>100.000</strong></li>
             <li><span>👥 Luồng ảnh đồng thời</span><strong>12</strong></li>
             <li><span>👥 Luồng video đồng thời</span><strong>12</strong></li>
+            <li><span>⚡ Hệ số tiêu tốn quota</span><strong>×1</strong></li>
           </ul>
           <div class="pricing-perks">
             <span>✓ Upscale</span>
@@ -385,7 +391,9 @@
           </div>
           <a href="#" class="btn-pricing btn-pricing--red" data-plan="DN VIDEO" data-amount="3649000" data-price="3.649.000đ">🛒 Mua gói</a>
         </div>
-
+        <button class="carousel-arrow carousel-arrow--next" id="priceNext" aria-label="Tiếp">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
       </div>
 
       <p class="pricing-contact">
@@ -492,6 +500,6 @@
   </div>
 
   <script src="assets/js/i18n.js?v=2"></script>
-  <script src="assets/js/main.js?v=4"></script>
+  <script src="assets/js/main.js?v=5"></script>
 </body>
 </html>
