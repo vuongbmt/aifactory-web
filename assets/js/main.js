@@ -41,8 +41,8 @@
       animId = requestAnimationFrame(frame);
     }
 
-    prev.addEventListener('click', () => animScroll(-Math.round(track.clientWidth * 0.82), 600));
-    next.addEventListener('click', () => animScroll( Math.round(track.clientWidth * 0.82), 600));
+    prev.addEventListener('click', () => animScroll(-Math.round(track.clientWidth * 0.82), 900));
+    next.addEventListener('click', () => animScroll( Math.round(track.clientWidth * 0.82), 900));
     track.addEventListener('scroll', update, { passive: true });
     window.addEventListener('resize', update, { passive: true });
 
