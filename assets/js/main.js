@@ -7,11 +7,11 @@
     const wrap  = track && track.closest('.carousel-wrap');
     if (!track || !prev || !next) return;
 
-    let scrollTimer = null;
+    let animId = null;
 
     function update() {
-      const atStart  = track.scrollLeft <= 2;
-      const atEnd    = track.scrollLeft >= track.scrollWidth - track.clientWidth - 2;
+      const atStart   = track.scrollLeft <= 2;
+      const atEnd     = track.scrollLeft >= track.scrollWidth - track.clientWidth - 2;
       const canScroll = track.scrollWidth > track.clientWidth + 4;
 
       prev.classList.toggle('hidden', atStart || !canScroll);
@@ -22,22 +22,43 @@
       }
     }
 
-    function scrollBy(dir) {
-      // scroll by ~80% of visible width so next card peeks in (Apple-style)
-      const step = Math.round(track.clientWidth * 0.8);
-      track.scrollBy({ left: dir * step, behavior: 'smooth' });
-      // fallback: update after scroll animation (~400ms)
-      clearTimeout(scrollTimer);
-      scrollTimer = setTimeout(update, 420);
+    // Custom slow smooth scroll (600ms, easeInOutCubic)
+    function smoothScrollBy(distance, duration) {
+      if (animId) cancelAnimationFrame(animId);
+      const start    = track.scrollLeft;
+      const target   = Math.max(0, Math.min(start + distance, track.scrollWidth - track.clientWidth));
+      const startTime = performance.now();
+
+      function ease(t) {
+        return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+      }
+
+      function step(now) {
+        const elapsed  = now - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        track.scrollLeft = start + (target - start) * ease(progress);
+        update();
+        if (progress < 1) {
+          animId = requestAnimationFrame(step);
+        } else {
+          animId = null;
+          update();
+        }
+      }
+      animId = requestAnimationFrame(step);
     }
 
-    prev.addEventListener('click', () => scrollBy(-1));
-    next.addEventListener('click', () => scrollBy(1));
+    prev.addEventListener('click', () => smoothScrollBy(-Math.round(track.clientWidth * 0.82), 600));
+    next.addEventListener('click', () => smoothScrollBy( Math.round(track.clientWidth * 0.82), 600));
     track.addEventListener('scroll', update, { passive: true });
-    // scrollend fires when smooth scroll finishes (modern browsers)
     track.addEventListener('scrollend', update, { passive: true });
     window.addEventListener('resize', update, { passive: true });
-    requestAnimationFrame(update);
+
+    // Wait for layout to settle before initial arrow state
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      update();
+      setTimeout(update, 200);
+    }));
   }
 
   initArrows('featCarousel', 'featPrev', 'featNext');
